@@ -25,7 +25,7 @@ service asgardeo:RegistrationService on webhookListener {
     }
 
      remote function onLockUser(asgardeo:GenericEvent event) returns error? {
-        
+  
         log:printInfo(event.toJsonString());
     }
 }
