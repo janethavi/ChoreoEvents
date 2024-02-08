@@ -23,6 +23,11 @@ service asgardeo:RegistrationService on webhookListener {
         
         log:printInfo(event.toJsonString());
     }
+
+    remote function onLockUser(GenericEvent event) returns error? {
+        
+        log:printInfo(event.toJsonString());
+    }
 }
 
 service /ignore on httpListener {}
