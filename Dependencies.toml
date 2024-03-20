@@ -5,11 +5,11 @@
 
 [ballerina]
 dependencies-toml-version = "2"
-distribution-version = "2201.8.4"
+distribution-version = "2201.8.6"
 
 [[package]]
-org = "asagrdeotestvs3rdparty"
-name = "greeter"
+org = "ayesh"
+name = "asgardeo_webhook"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
@@ -18,7 +18,7 @@ dependencies = [
 	{org = "ballerinax", name = "trigger.asgardeo"}
 ]
 modules = [
-	{org = "asagrdeotestvs3rdparty", packageName = "greeter", moduleName = "greeter"}
+	{org = "ayesh", packageName = "asgardeo_webhook", moduleName = "asgardeo_webhook"}
 ]
 
 [[package]]
@@ -47,7 +47,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "cloud"
-version = "2.11.2"
+version = "2.11.3"
 
 [[package]]
 org = "ballerina"
@@ -80,7 +80,7 @@ dependencies = [
 [[package]]
 org = "ballerina"
 name = "http"
-version = "2.10.6"
+version = "2.10.11"
 dependencies = [
 	{org = "ballerina", name = "auth"},
 	{org = "ballerina", name = "cache"},

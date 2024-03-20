@@ -20,6 +20,3 @@ service asgardeo:UserOperationService on webhookListener {
     remote function onDeleteUser(asgardeo:GenericEvent event) returns error? {}
     remote function onUpdateUserGroup(asgardeo:UserGroupUpdateEvent event) returns error? {}
 }
-
-service /ignore on httpListener {}
-
