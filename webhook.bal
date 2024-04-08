@@ -7,16 +7,15 @@ configurable asgardeo:ListenerConfig config = ?;
 listener http:Listener httpListener = new(8090);
 listener asgardeo:Listener webhookListener =  new(config,httpListener);
 
-service asgardeo:UserOperationService on webhookListener {
-    remote function onLockUser(asgardeo:GenericEvent event) returns error? {
-        log:printInfo(event.toJsonString());
+service asgardeo:LoginService on webhookListener {
+  
+    remote function onLoginSuccess(asgardeo:LoginSuccessEvent event ) returns error? {
+      log:printInfo(event.toJsonString());
     }
 
-    remote function onUnlockUser(asgardeo:GenericEvent event) returns error? {
-        log:printInfo(event.toJsonString());
+    remote function onLoginFailed(asgardeo:LoginFailedEvent event ) returns error? {
+      log:printInfo(event.toJsonString());
     }
-
-    remote function onUpdateUserCredentials(asgardeo:GenericEvent event) returns error? {}
-    remote function onDeleteUser(asgardeo:GenericEvent event) returns error? {}
-    remote function onUpdateUserGroup(asgardeo:UserGroupUpdateEvent event) returns error? {}
 }
+
+service /ignore on httpListener {}
